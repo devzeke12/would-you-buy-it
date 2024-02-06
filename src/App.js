@@ -8,6 +8,7 @@ import { ImgContextProvider } from './db/imgcontext';
 
 function App() {
   return (
+    <div className='bg-white dark:bg-[#181A1E] transition-colors delay-200'>
     <ImgContextProvider>
         <BrowserRouter>
         <TopBar />
@@ -17,6 +18,7 @@ function App() {
           </Routes>
         </BrowserRouter>
         </ImgContextProvider>
+    </div>
   );
 }
 

@@ -1,0 +1,7 @@
+.mobileView{
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.mobileView::-webkit-scrollbar{
+  width:0;
+}

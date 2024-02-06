@@ -8,6 +8,7 @@ export const ImgContextProvider = (props) => {
     const [selectedFile, setSelectedFile] = useState(null);
     const [title, setTitle] = useState('')
     const [showImage, setShowImage] = useState(false);
+    const [error, setError] = useState('')
 
   const handleFileChange = (event) => {
     setSelectedFile(event.target.files[0]);
@@ -16,7 +17,20 @@ export const ImgContextProvider = (props) => {
 
   const handleInput = (e) => {
     const value = e.target.value;
-    setTitle(value);
+    if (value.length <= 80) {
+      setTitle(value);
+      setError('');
+    } else {
+      setError('Maximum length should be 80 characters.');
+    }
+  };
+
+  const handleBlur = () => {
+    if (title.length < 12) {
+      setError('Minimum length should be 12 characters.');
+    } else {
+      setError('');
+    }
   };
 
 
@@ -26,7 +40,7 @@ export const ImgContextProvider = (props) => {
     setShowImage(true)
   }
 
-    const contextValue = {handleFileChange, selectedFile, handleUpload, showImage, title, handleInput, setTitle, setSelectedFile}
+    const contextValue = {handleFileChange, selectedFile, handleUpload, showImage, title, handleInput, setTitle, setSelectedFile, error, handleBlur}
 
     return (
         <ImgContext.Provider value={contextValue}>
