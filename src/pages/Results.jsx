@@ -169,64 +169,6 @@ const Results = () => {
           ))}
         </div>
         
-    <div className='overflow-x-hidden bg-red-500 overflow-y-scroll whitespace-wrap w-full relative h-[300px] mobileView mx-auto'>
-      <div className='flex flex-col items-center flex-wrap justify-between'>
-          {results.map((item, index) => (
-            <div key={index} className='relative rounded-md w-[300px] cursor-pointer flex flex-col gap-2 my-5'>
-              <div className='relative w-full h-[150px]'>
-                <img
-                  src={item.gigImage}
-                  alt="Selected"
-                  style={{ maxWidth: '100%', maxHeight: '200px' }}
-                  className='w-full h-full rounded-xl object-cover'
-                />
-              </div>
-              <div className='flex justify-between font-bold items-center'>
-                <div className='flex gap-2 '>
-                  <img src={item.logo} alt="Selected" className='w-7 h-7 rounded-full' />
-                  <h1>{item.sellerName}</h1>
-                </div>
-                <h1>{item.sellerLevel}</h1>
-              </div>
-              <div>
-                <h1>I will {item.gigTitle}</h1>
-                <h1>Not Rated Yet </h1>
-                <h1 className='font-bold'>{`From $${item.price}`}</h1>
-              </div>
-            </div>
-          ))}
-        </div>
-    </div>
-
-
-
-    <div className='flex flex-wrap justify-between'>
-          {results.map((item, index) => (
-            <div key={index} className='relative rounded-md w-[300px] cursor-pointer flex flex-col gap-2 my-5'>
-              <div className='relative w-full h-[150px]'>
-                <img
-                  src={item.gigImage}
-                  alt="Selected"
-                  style={{ maxWidth: '100%', maxHeight: '200px' }}
-                  className='w-full h-full rounded-xl object-cover'
-                />
-              </div>
-              <div className='flex justify-between font-bold items-center'>
-                <div className='flex gap-2 '>
-                  <img src={item.logo} alt="Selected" className='w-7 h-7 rounded-full' />
-                  <h1>{item.sellerName}</h1>
-                </div>
-                <h1>{item.sellerLevel}</h1>
-              </div>
-              <div>
-                <h1>I will {item.gigTitle}</h1>
-                <h1>Not Rated Yet </h1>
-                <h1 className='font-bold'>{`From $${item.price}`}</h1>
-              </div>
-            </div>
-          ))}
-        </div>
-
         <PhoneView>
         <div className='overflow-x-hidden overflow-y-scroll whitespace-wrap w-full relative h-full my-10 mobileView mx-auto'>
       <div className='flex flex-col items-center flex-wrap justify-between'>
