@@ -30,6 +30,7 @@ import row3Gig2Logo from '../assets/Row 3/Gig 2/JPEG_20231125_130030_88878752374
 import row3Gig3Logo from '../assets/Row 3/Gig 3/28a92893-f8d3-4415-aa1c-c22577e527cd.webp';
 import row3Gig4Logo from '../assets/Row 3/Gig 4/b1b608d5-c2d2-4762-a5fe-ca6b3dab24de.webp';
 import PhoneView from '../component/PhoneView';
+import { FiStar } from 'react-icons/fi';
 
 const Results = () => {
   const { selectedFile, title, showImage } = useContext(ImgContext);
@@ -42,7 +43,9 @@ const Results = () => {
       gigImage: row1Gig1Image,
       logo: row1Gig1Logo,
       sellerName: 'James',
-      sellerLevel: 'Level 1'
+      sellerLevel: 'Level 1',
+      reviews: 32,
+      rating: 4.5
     },
     {
       gigTitle: title,
@@ -50,7 +53,9 @@ const Results = () => {
       gigImage: yourGigImage,
       logo: row1Gig2Logo,
       sellerName: 'Your Name',
-      sellerLevel: ''
+      sellerLevel: '',
+      reviews: 0,
+      rating: 0
     },
     {
       gigTitle: 'Design a spawn hub or map for your Minecraft server',
@@ -58,7 +63,9 @@ const Results = () => {
       gigImage: row1Gig3Image,
       logo: row1Gig3Logo,
       sellerName: 'Walter',
-      sellerLevel: 'Top Rated'
+      sellerLevel: 'Top Rated',
+      reviews: 105,
+      rating: 4.1
     },
     {
       gigTitle: 'Create modern, minimalist, and luxury logo design',
@@ -66,7 +73,9 @@ const Results = () => {
       gigImage: row1Gig4Image,
       logo: row1Gig4Logo,
       sellerName: 'Cole',
-      sellerLevel: 'Level 2'
+      sellerLevel: 'Level 2',
+      reviews: 62,
+      rating: 3.5
     },
     {
       gigTitle: 'Convert Figma design to responsive React website or CSS Bootstrap',
@@ -74,7 +83,9 @@ const Results = () => {
       gigImage: row2Gig1Image,
       logo: row2Gig1Logo,
       sellerName: 'Mascott',
-      sellerLevel: ''
+      sellerLevel: '',
+      reviews: 3,
+      rating: 4.5
     },
     {
       gigTitle: 'Be your Salesforce administrator',
@@ -82,7 +93,9 @@ const Results = () => {
       gigImage: row2Gig2Image,
       logo: row2Gig2Logo,
       sellerName: 'Will',
-      sellerLevel: 'Level 1'
+      sellerLevel: 'Level 1',
+      reviews: 25,
+      rating: 4.6
     },
     {
       gigTitle: 'Write a backstory for your fictional DnD or SciFi character',
@@ -90,7 +103,9 @@ const Results = () => {
       gigImage: row2Gig3Image,
       logo: row2Gig3Logo,
       sellerName: 'Phlip',
-      sellerLevel: ''
+      sellerLevel: '',
+      reviews: 5,
+      rating: 4.2
     },
     {
       gigTitle: 'Do article and proposal writing in 24 hours',
@@ -98,7 +113,9 @@ const Results = () => {
       gigImage: row2Gig4Image,
       logo: row2Gig4Logo,
       sellerName: 'Smith',
-      sellerLevel: 'Level 2'
+      sellerLevel: 'Level 2',
+      reviews: 77,
+      rating: 2.5
     },
     {
       gigTitle: 'Do SEO backlinks with high-quality dofollow contextual white hat link building',
@@ -106,7 +123,9 @@ const Results = () => {
       gigImage: row3Gig1Image,
       logo: row3Gig1Logo,
       sellerName: 'Jefferies',
-      sellerLevel: 'Top Rated'
+      sellerLevel: 'Top Rated',
+      reviews: 102,
+      rating: 3.9
     },
     {
       gigTitle: 'Build GPT-4 auto-blogging WP site for any niche with 1k articles',
@@ -114,7 +133,9 @@ const Results = () => {
       gigImage: row3Gig2Image,
       logo: row3Gig2Logo,
       sellerName: 'Zeke',
-      sellerLevel: ''
+      sellerLevel: '',
+      reviews: 0,
+      rating: 3.6
     },
     {
       gigTitle: 'Create chatbot using Dialogue Flow with integration',
@@ -122,7 +143,9 @@ const Results = () => {
       gigImage: row3Gig3Image,
       logo: row3Gig3Logo,
       sellerName: 'Blessing',
-      sellerLevel: 'Level 1'
+      sellerLevel: 'Level 1',
+      reviews: 16,
+      rating: 4.5
     },
     {
       gigTitle: 'Data business analysis: Excel, R, Python, automation, Tableau, report dashboard',
@@ -130,12 +153,14 @@ const Results = () => {
       gigImage: row3Gig4Image,
       logo: row3Gig4Logo,
       sellerName: 'Emmanuel',
-      sellerLevel: 'Level 1'
+      sellerLevel: 'Level 1',
+      reviews: 12,
+      rating: 4.0
     },
   ];
 
   return (
-    <div className='px-5'>
+    <div className='px-5 text-black dark:text-white'>
       {showImage === false ? (
         <div></div>
         ) : (
@@ -162,7 +187,10 @@ const Results = () => {
               </div>
               <div>
                 <h1>I will {item.gigTitle}</h1>
-                <h1>Not Rated Yet </h1>
+                <h1>{item.reviews === 0  ? 'Not Rated Yet' : 
+                <div className='flex items-baseline font-bold'>
+                <FiStar />{item.rating}<h1 className='font-light'>({item.reviews})</h1>
+                </div> }</h1>
                 <h1 className='font-bold'>{`From $${item.price}`}</h1>
               </div>
             </div>
@@ -170,10 +198,10 @@ const Results = () => {
         </div>
         
         <PhoneView>
-        <div className='overflow-x-hidden overflow-y-scroll whitespace-wrap w-full relative h-full my-10 mobileView mx-auto'>
+        <div className='overflow-x-hidden overflow-y-scroll whitespace-wrap w-full relative h-[500px] my-12 mobileView mx-auto'>
       <div className='flex flex-col items-center flex-wrap justify-between'>
           {results.map((item, index) => (
-            <div key={index} className='relative rounded-md w-[300px] cursor-pointer flex flex-col gap-2 my-5'>
+            <div key={index} className='relative rounded-md w-[200px] cursor-pointer flex flex-col gap-2 my-5'>
               <div className='relative w-full h-[150px]'>
                 <img
                   src={item.gigImage}
@@ -191,7 +219,10 @@ const Results = () => {
               </div>
               <div>
                 <h1>I will {item.gigTitle}</h1>
-                <h1>Not Rated Yet </h1>
+                <h1>{item.reviews === 0  ? 'Not Rated Yet' : 
+                <div className='flex items-baseline font-bold'>
+                <FiStar />{item.rating}<h1 className='font-light'>({item.reviews})</h1>
+                </div> }</h1>
                 <h1 className='font-bold'>{`From $${item.price}`}</h1>
               </div>
             </div>
