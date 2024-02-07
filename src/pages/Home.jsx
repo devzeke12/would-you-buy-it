@@ -40,7 +40,7 @@ const Home = () => {
           <h1 className='font-light text-gray-500 py-5'>Choose a title and Image to see what it will look like on Fiverr.</h1>
         </div>
         <div className='flex flex-col md:flex-row relative w-2/3 h-[300px]'>
-          <div  className='w-full h-[500px] md:w-1/2 flex flex-col justify-around items-center relative  border-2 border-green-500 text-center bg-cover'>
+          <div  className='w-full md:w-1/2 flex flex-col justify-around items-center relative  border-2 border-green-500 text-center bg-cover'>
             <div className='relative'>
               <img src={uploadLogo} alt='Upload Logo' className='w-20 h-20' />
             </div>
