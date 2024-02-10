@@ -164,10 +164,10 @@ const Results = () => {
       {showImage === false ? (
         <div></div>
         ) : (
-          <>
-          <h1>Results</h1>
-        <h1>On Desktop</h1>
-        <div className='flex flex-wrap justify-between'>
+          <div className='w-full py-20' >
+        <h1 className='text-4xl text-center'>On Desktop</h1>
+        <div className='overflow-x-scroll overflow-y-hidden mobileView grid  grid-cols-auto whitespace-wrap w-full relative h-full max-w-screen-xl mx-auto'>
+        <div className='grid grid-cols-[1fr_1fr_1fr_1fr] grid-rows-3 gap-7'>
           {results.map((item, index) => (
             <div key={index} className='relative rounded-md w-[300px] cursor-pointer flex flex-col gap-2 my-5'>
               <div className='relative w-full h-[150px]'>
@@ -196,9 +196,14 @@ const Results = () => {
             </div>
           ))}
         </div>
+    </div>
+
+    <div className='w-full py-20'>
         
+    <h1 className='text-4xl text-center'>On Mobile</h1>
+
         <PhoneView>
-        <div className='overflow-x-hidden overflow-y-scroll whitespace-wrap w-full relative h-[500px] my-12 mobileView mx-auto'>
+        <div className='overflow-y-hidden overflow-x-scroll whitespace-wrap w-full relative h-[500px] my-12 mobileView mx-auto'>
       <div className='flex flex-col items-center flex-wrap justify-between'>
           {results.map((item, index) => (
             <div key={index} className='relative rounded-md w-[200px] cursor-pointer flex flex-col gap-2 my-5'>
@@ -230,10 +235,8 @@ const Results = () => {
         </div>
     </div>
         </PhoneView>
-
-
-        
-        </>
+    </div>
+        </div>
       )}
     </div>
   );

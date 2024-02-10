@@ -39,16 +39,16 @@ const Home = () => {
           <h1 className='text-black text-2xl md:text-5xl font-bold dark:text-white'>Would You Buy it</h1>
           <h1 className='font-light text-gray-500 py-5'>Choose a title and Image to see what it will look like on Fiverr.</h1>
         </div>
-        <div className='flex flex-col md:flex-row relative w-2/3 h-[300px]'>
-          <div  className='w-full md:w-1/2 flex flex-col justify-around items-center relative  border-2 border-green-500 text-center bg-cover'>
+        <div className='flex flex-col md:flex-row relative w-2/3 h-[300px] gap-5'>
+          <div  className={`w-full md:w-1/2 flex flex-col justify-center gap-5 md:justify-around items-center relative  border-2 border-green-500 text-center bg-cover h-48 ${selectedFile ? 'py-0' : 'py-5'}`}>
             <div className='relative'>
-              <img src={uploadLogo} alt='Upload Logo' className='w-20 h-20' />
+              <img src={uploadLogo} alt='Upload Logo' className='w-14 h-14 md:w-20 md:h-20' />
             </div>
           {selectedFile ? <div className='absolute w-full h-full'>
             <img src={URL.createObjectURL(selectedFile)} alt=' ' className='w-full h-full bg-cover' />
             </div> :  <p className='text-black dark:text-white'>Upload Your Image Here</p>}
             <div className='z-10'>
-        <label className="cursor-pointer text-white bg-green-500 w-fit py-2 px-4 rounded text-center">
+        <label className={`cursor-pointer text-white bg-green-500 w-fit py-2 px-4 rounded text-center ${selectedFile ? 'mb-10' : ''}`}>
           {selectedFile ? 'Image selected' : 'Choose a file'}
           <input
             type="file"
@@ -60,8 +60,8 @@ const Home = () => {
         </label>
             </div>
             </div>
-        <div className='w-1/2 text-left px-[20px] flex flex-col gap-5'>
-          <h1 className='text-black dark:text-white'>Title</h1>
+        <div className='w-full md:w-1/2 text-left px-0 md:px-[20px] flex flex-col gap-2'>
+          <h1 className='text-black dark:text-white'>Title:</h1>
         <div className='flex border px-5 bg-white'>
           <input
             type='text'
