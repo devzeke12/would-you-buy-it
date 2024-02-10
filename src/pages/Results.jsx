@@ -203,7 +203,7 @@ const Results = () => {
     <h1 className='text-4xl text-center'>On Mobile</h1>
 
         <PhoneView>
-        <div className='overflow-y-hidden overflow-x-scroll whitespace-wrap w-full relative h-[500px] my-12 mobileView mx-auto'>
+        <div className='overflow-x-hidden overflow-y-scroll whitespace-wrap w-full relative h-[500px] mt-12 mb-5 mobileView mx-auto'>
       <div className='flex flex-col items-center flex-wrap justify-between'>
           {results.map((item, index) => (
             <div key={index} className='relative rounded-md w-[200px] cursor-pointer flex flex-col gap-2 my-5'>
